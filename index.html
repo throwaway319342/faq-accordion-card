@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    :root {
+      box-sizing: border-box;
+      font-size: 12px;
+    }
+
+    *,
+    ::before,
+    ::after {
+      box-sizing: inherit;
+      margin: 0px;
+    }
+
+    .page-container {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .page-container--center {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page-container--bg-img {
+      background-color: hsl(273, 75%, 66%);
+    }
+
+    .card {
+      display: flex;
+      width: 1100px;
+      padding-top: 4em;
+      padding-bottom: 4em;
+    }
+
+    .card--rounded-corners {
+      border-radius: 12px;
+    }
+
+    .card--bg-img {
+      background-color: white;
+      background-image: url('/images/bg-pattern-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: 450px 500px;
+    }
+
+    .card__left-column {
+      width: 500px;
+    }
+
+    .card__right-column {
+      display: flex;
+      width: 600px;
+      padding-left: 4rem;
+      padding-right: 7rem;
+      flex-direction: column;
+    }
+
+    .card__right-column__header {
+      padding-bottom: 2em;
+    }
+
+    .card__right-column__faq-container {
+      border-bottom: 1px solid black;
+      padding-top: 1em;
+      padding-bottom: 0.7em;
+    }
+
+    .card__right-column__question {
+      display: flex;
+      justify-content: space-between;
+      color: hsl(237, 12%, 33%)
+    }
+
+    .card__right-column__question:hover {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      color: hsl(14, 88%, 65%);
+    }
+
+    .card__right-column__answer {
+      padding-right: 1.5em;
+      padding-top: 0.7em;
+      color: hsl(240, 6%, 50%)
+    }
+  </style>
+  <script>
+    function hideAnswer(ele) {
+      switch (ele.id) {
+        case 'ques1':
+          (document.getElementById('ans1').style.display == 'none') ? document.getElementById('ans1').style.display = 'block' : document.getElementById('ans1').style.display = 'none';
+          break;
+        case 'ques2':
+          (document.getElementById('ans2').style.display == 'none') ? document.getElementById('ans2').style.display = 'block' : document.getElementById('ans2').style.display = 'none';
+          break;
+        case 'ques3':
+          (document.getElementById('ans3').style.display == 'none') ? document.getElementById('ans3').style.display = 'block' : document.getElementById('ans3').style.display = 'none';
+          break;
+        case 'ques4':
+          (document.getElementById('ans4').style.display == 'none') ? document.getElementById('ans4').style.display = 'block' : document.getElementById('ans4').style.display = 'none';
+          break;
+        case 'ques5':
+          (document.getElementById('ans5').style.display == 'none') ? document.getElementById('ans5').style.display = 'block' : document.getElementById('ans5').style.display = 'none';
+          break;
+        default:
+          console.log("cant find selection");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="page-container page-container--center page-container--bg-img">
+    <div class="card card--bg-img card--rounded-corners">
+      <div class="card__left-column">
+        <img src="/images/illustration-woman-online-desktop.svg">
+      </div>
+      <div class="card__right-column card__right-column--center">
+        <div class="card__right-column__header">
+          <h2>FAQ</h2>
+        </div>
+        <div class="card__right-column__faq-container">
+          <div id="ques1" onclick="hideAnswer(this)" class="card__right-column__question">
+            <p>How many members can I invite?</p>
+            <img width="11" height="8" src="/images/icon-arrow-down.svg">
+          </div>
+          <div id="ans1" style="display: none" class="card__right-column__answer">
+            <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+              team members for the Premium plan.</p>
+          </div>
+        </div>
+        <div class="card__right-column__faq-container">
+          <div id="ques2" onclick="hideAnswer(this)" class="card__right-column__question">
+            <p>What is the maximum file upload size?</p>
+            <img width="11" height="8" src="/images/icon-arrow-down.svg">
+          </div>
+          <div id="ans2" style="display: none" class="card__right-column__answer">
+            <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          </div>
+        </div>
+        <div class="card__right-column__faq-container">
+          <div id="ques3" onclick="hideAnswer(this)" class="card__right-column__question">
+            <p>How do I reset my password?</p>
+            <img width="11" height="8" src="/images/icon-arrow-down.svg">
+          </div>
+          <div id="ans3" style="display: none" class="card__right-column__answer">
+            <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+              A reset link will be emailed to you.</p>
+          </div>
+        </div>
+        <div class="card__right-column__faq-container">
+          <div id="ques4" onclick="hideAnswer(this)" class="card__right-column__question">
+            <p>Can I cancel my subscription?</p>
+            <img width="11" height="8" src="/images/icon-arrow-down.svg">
+          </div>
+          <div id="ans4" style="display: none" class="card__right-column__answer">
+            <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+          </div>
+        </div>
+        <div class="card__right-column__faq-container">
+          <div id="ques5" onclick="hideAnswer(this)" class="card__right-column__question">
+            <p>Do you provide additional support?</p>
+            <img width="11" height="8" src="/images/icon-arrow-down.svg">
+          </div>
+          <div id="ans5" style="display: none" class="card__right-column__answer">
+            <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
